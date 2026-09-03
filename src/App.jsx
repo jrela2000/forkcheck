@@ -1,11 +1,24 @@
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
+import ProtectedRoute from '@/components/ProtectedRoute';
+import Login from '@/pages/Login';
+import Register from '@/pages/Register';
+import ForgotPassword from '@/pages/ForgotPassword';
+import ResetPassword from '@/pages/ResetPassword';
+import Home from '@/pages/Home';
+import Search from '@/pages/Search';
+import RestaurantProfile from '@/pages/RestaurantProfile';
+import ReviewRecord from '@/pages/ReviewRecord';
+import ReviewProcessing from '@/pages/ReviewProcessing';
+import ReviewRate from '@/pages/ReviewRate';
+import Profile from '@/pages/Profile';
+import OwnerDashboard from '@/pages/OwnerDashboard';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -34,7 +47,20 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
-      {/* Add your page Route elements here */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route element={<ProtectedRoute unauthenticatedElement={<Navigate to="/login" replace />} />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/restaurant/:id" element={<RestaurantProfile />} />
+        <Route path="/review/:restaurantId" element={<ReviewRecord />} />
+        <Route path="/review/:reviewId/processing" element={<ReviewProcessing />} />
+        <Route path="/review/:reviewId/rate" element={<ReviewRate />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/owner" element={<OwnerDashboard />} />
+      </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

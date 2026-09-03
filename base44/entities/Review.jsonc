@@ -1,0 +1,108 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "restaurant_id": {
+      "type": "string",
+      "title": "Restaurant ID"
+    },
+    "restaurant_name": {
+      "type": "string",
+      "title": "Restaurant Name"
+    },
+    "restaurant_image_url": {
+      "type": "string",
+      "title": "Restaurant Image URL"
+    },
+    "video_url": {
+      "type": "string",
+      "title": "Video URL"
+    },
+    "video_thumbnail_url": {
+      "type": "string",
+      "title": "Video Thumbnail URL"
+    },
+    "transcription_text": {
+      "type": "string",
+      "title": "Transcription"
+    },
+    "ai_generated_summary": {
+      "type": "string",
+      "title": "AI Summary"
+    },
+    "sentiment_score": {
+      "type": "number",
+      "title": "Sentiment Score",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "highlight_quote": {
+      "type": "string",
+      "title": "Highlight Quote"
+    },
+    "food_rating": {
+      "type": "integer",
+      "title": "Food Rating",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 3
+    },
+    "service_rating": {
+      "type": "integer",
+      "title": "Service Rating",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 3
+    },
+    "value_rating": {
+      "type": "integer",
+      "title": "Value Rating",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 3
+    },
+    "atmosphere_rating": {
+      "type": "integer",
+      "title": "Atmosphere Rating",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 3
+    },
+    "wait_time_rating": {
+      "type": "integer",
+      "title": "Wait Time Rating",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 3
+    },
+    "overall_rating": {
+      "type": "number",
+      "title": "Overall Rating",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 3
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "processing",
+        "published",
+        "failed"
+      ],
+      "default": "processing"
+    },
+    "platforms_published": {
+      "type": "object",
+      "title": "Platforms Published"
+    },
+    "helpful_votes": {
+      "type": "integer",
+      "title": "Helpful Votes",
+      "default": 0
+    }
+  },
+  "required": [
+    "restaurant_id"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Reservation",
+  "type": "object",
+  "properties": {
+    "restaurant_id": {
+      "type": "string",
+      "title": "Restaurant ID"
+    },
+    "restaurant_name": {
+      "type": "string",
+      "title": "Restaurant Name"
+    },
+    "reservation_platform": {
+      "type": "string",
+      "title": "Reservation Platform",
+      "enum": [
+        "opentable",
+        "resy",
+        "sevenrooms",
+        "none"
+      ],
+      "default": "none"
+    },
+    "reservation_datetime": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Reservation Datetime"
+    },
+    "party_size": {
+      "type": "integer",
+      "title": "Party Size",
+      "default": 2
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "confirmed",
+        "cancelled",
+        "completed"
+      ],
+      "default": "confirmed"
+    },
+    "review_reminder_sent": {
+      "type": "boolean",
+      "title": "Review Reminder Sent",
+      "default": false
+    }
+  },
+  "required": [
+    "restaurant_id",
+    "reservation_datetime"
+  ]
+}

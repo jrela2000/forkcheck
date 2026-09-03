@@ -1,0 +1,105 @@
+{
+  "name": "Restaurant",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "city": {
+      "type": "string",
+      "title": "City"
+    },
+    "state": {
+      "type": "string",
+      "title": "State"
+    },
+    "zip": {
+      "type": "string",
+      "title": "Zip"
+    },
+    "latitude": {
+      "type": "number",
+      "title": "Latitude"
+    },
+    "longitude": {
+      "type": "number",
+      "title": "Longitude"
+    },
+    "cuisine_type": {
+      "type": "string",
+      "title": "Cuisine Type"
+    },
+    "price_range": {
+      "type": "integer",
+      "title": "Price Range",
+      "minimum": 1,
+      "maximum": 4,
+      "default": 2
+    },
+    "phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "website": {
+      "type": "string",
+      "title": "Website"
+    },
+    "hours": {
+      "type": "object",
+      "title": "Hours"
+    },
+    "is_black_owned": {
+      "type": "boolean",
+      "title": "Black Owned",
+      "default": false
+    },
+    "black_owned_verified": {
+      "type": "boolean",
+      "title": "Black Owned Verified",
+      "default": false
+    },
+    "reservation_platform": {
+      "type": "string",
+      "title": "Reservation Platform",
+      "enum": [
+        "opentable",
+        "resy",
+        "sevenrooms",
+        "none"
+      ],
+      "default": "none"
+    },
+    "reservation_url": {
+      "type": "string",
+      "title": "Reservation URL"
+    },
+    "hero_image_url": {
+      "type": "string",
+      "title": "Hero Image URL"
+    },
+    "rating_average": {
+      "type": "number",
+      "title": "Rating Average",
+      "default": 0
+    },
+    "review_count": {
+      "type": "integer",
+      "title": "Review Count",
+      "default": 0
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    }
+  },
+  "required": [
+    "name",
+    "city",
+    "cuisine_type"
+  ]
+}
